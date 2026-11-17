@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inkwell</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../web/inkwell.css">
+<style>
+  section{padding:72px 0;border-top:1px solid var(--line)}
+  .sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:28px}
+  .sw div{border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--card)}
+  .sw i{display:block;height:72px;border-bottom:1px solid var(--line)}
+  .sw p{padding:10px 12px;font-size:13px}.sw p span{display:block;color:var(--muted);font-size:12px}
+  .demo-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:28px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px}
+  @media (max-width:760px){.two{grid-template-columns:1fr}}
+  h2.display-l{margin:14px 0 0}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="#"><span class="mark">I</span>Inkwell</a>
+  <div class="nav-links"><a href="#color">Color</a><a href="#type">Type</a><a href="#components">Components</a><a href="#patterns">Patterns</a></div>
+  <button class="btn btn-ghost btn-sm" id="theme">Toggle theme</button>
+</div></nav>
+
+<header class="wrap" style="padding:96px 24px 72px">
+  <span class="chip"><b>v1</b> Shared UI for every Zenbyte app</span>
+  <h1 class="display-xl" style="margin:28px 0 24px;max-width:12ch">Black ink, <em>white paper.</em></h1>
+  <p class="lede">Greys carry the hierarchy, serif type carries the voice, and that's the whole palette. No accent colours, ever.</p>
+</header>
+
+<section id="color"><div class="wrap">
+  <span class="eyebrow">Color</span>
+  <h2 class="display-l">Paper, ink, <em>and greys</em></h2>
+  <div class="sw" id="swatches"></div>
+</div></section>
+
+<section id="type"><div class="wrap">
+  <span class="eyebrow">Type</span>
+  <h2 class="display-l">Instrument Serif <em>&amp; Inter</em></h2>
+  <div class="card card-lg" style="margin-top:28px;display:grid;gap:20px">
+    <div><span class="eyebrow">Display XL · serif 400</span><div class="display-m" style="margin-top:8px">Plain words, <em>italic accent</em></div></div>
+    <div><span class="eyebrow">Title · serif 26</span><div class="title" style="margin-top:8px">Card and panel titles</div></div>
+    <div><span class="eyebrow">Lede · sans 20</span><p class="lede" style="margin-top:8px">Lede paragraphs use ink-2 at a relaxed line height.</p></div>
+    <div><span class="eyebrow">Body · sans 17 / app 13.5</span><p style="margin-top:8px">Body copy is Inter at regular weight. Use 500 for emphasis and 600 for labels.</p></div>
+  </div>
+</div></section>
+
+<section id="components"><div class="wrap">
+  <span class="eyebrow">Components</span>
+  <h2 class="display-l">Buttons, <em>controls</em></h2>
+  <div class="demo-row">
+    <button class="btn btn-dark">Primary action</button>
+    <button class="btn btn-ghost">Secondary</button>
+    <button class="btn btn-dark btn-sm">Small</button>
+    <button class="btn btn-dark btn-xs">Allow</button>
+    <button class="btn btn-dark" disabled>Disabled</button>
+    <button class="btn btn-icon" aria-label="More">⋯</button>
+  </div>
+  <div class="demo-row">
+    <div class="tabs" role="tablist"><button aria-selected="true">Today</button><button aria-selected="false">Week</button><button aria-selected="false">All</button></div>
+    <span class="chip"><b>NEW</b> Chip with badge</span>
+    <span class="tag">Tag</span>
+    <span class="kbd">⌥ Right Option</span>
+    <span class="status ok">✓</span><span class="status">!</span>
+    <input class="toggle" type="checkbox" checked aria-label="Toggle">
+  </div>
+  <div class="two">
+    <div class="panel">
+      <h3>Permissions</h3><p>Panel: a serif title over a card of rows.</p>
+      <div class="card">
+        <div class="row"><span class="status ok">✓</span><div class="t"><b>Microphone</b><span>Granted</span></div></div>
+        <div class="row"><span class="status">!</span><div class="t"><b>Accessibility</b><span>Needed to paste text</span></div><button class="btn btn-dark btn-xs">Allow</button></div>
+        <div class="row"><div class="t"><b>Launch at login</b><span>Start in the menu bar</span></div><input class="toggle" type="checkbox" aria-label="Launch at login"></div>
+      </div>
+    </div>
+    <div class="card" style="display:grid;gap:12px;align-content:start">
+      <span class="eyebrow">Inputs</span>
+      <label class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input placeholder="Search"></label>
+      <input class="field" placeholder="Themed field">
+      <textarea class="field" rows="3" placeholder="Multi-line"></textarea>
+    </div>
+  </div>
+</div></section>
+
+<section id="patterns"><div class="wrap">
+  <span class="eyebrow">Patterns</span>
+  <h2 class="display-l">Grids, stats, <em>steps</em></h2>
+  <div class="grid" style="margin-top:28px">
+    <div class="cell"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></div><h4>Hairline grid</h4><p>A 1px gap on a line-coloured background makes the dividers.</p></div>
+    <div class="cell"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg></div><h4>Outlined icons</h4><p>1.6px strokes in a rounded square.</p></div>
+    <div class="cell"><div class="ico"><svg viewBox="0 0 24 24"><path d="M5 12l4 4L19 6"/></svg></div><h4>Hover lifts</h4><p>Cells go from bg to card on hover.</p></div>
+  </div>
+  <ul class="ticks" style="margin-top:40px">
+    <li>Never use colour to carry meaning: pair state with an icon or words.</li>
+    <li>Use one primary (ink) button per view and make everything else ghost.</li>
+    <li>Set headlines in serif, with an italic accent for the second phrase.</li>
+  </ul>
+  <div class="steps" style="margin-top:56px">
+    <div class="step"><h4>Link the CSS</h4><p>Add web/inkwell.css plus the Google Fonts link.</p></div>
+    <div class="step"><h4>Use the classes</h4><p>btn, card, panel, row, tabs, grid…</p></div>
+    <div class="step"><h4>Stay monochrome</h4><p>If you reach for a colour, use a grey.</p></div>
+  </div>
+</div></section>
+
+<div class="wrap" style="padding-bottom:72px">
+  <div class="inverse"><div class="wrap">
+    <span class="eyebrow">Inverse band</span>
+    <h2 class="display-l" style="margin:14px 0 40px">For the one moment <em>that matters.</em></h2>
+    <div class="stats">
+      <div class="stat"><b>0</b><span>accent colours</span></div>
+      <div class="stat"><b>2</b><span>typefaces</span></div>
+      <div class="stat"><b>15</b><span>colour tokens</span></div>
+      <div class="stat"><b>2</b><span>themes</span></div>
+    </div>
+  </div></div>
+</div>
+
+<footer class="footer"><div class="wrap">Inkwell · tokens/tokens.json is the source of truth</div></footer>
+
+<script>
+const names=["bg","bg-2","card","ink","ink-2","muted","faint","line","line-2","fill","fill-deep","inv-bg","inv-ink"];
+const host=document.getElementById("swatches");
+function paint(){host.innerHTML=names.map(n=>`<div><i style="background:var(--${n})"></i><p>--${n}<span>${getComputedStyle(document.documentElement).getPropertyValue("--"+n).trim()}</span></p></div>`).join("")}
+paint();
+document.getElementById("theme").onclick=()=>{const r=document.documentElement;const dark=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme: dark)").matches;r.dataset.theme=dark?"light":"dark";paint()};
+document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{b.parentElement.querySelectorAll("button").forEach(x=>x.setAttribute("aria-selected",x===b))});
+</script>
+</body>
+</html>
